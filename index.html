@@ -6,6 +6,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Index 파일입니다</h1>
+<div id="app">
+    <h1>todos</h1>
+    <input v-model="list">
+</div>
 </body>
 </html>
+
+<template id = "todo">
+    <todo></todo>
+</template>
+
+<script>
+    Vue.component('todo',{
+        template:'#todo',
+    })
+
+    new Vue({
+        el: "#app",
+        data: {
+            list: "What needs to be done"
+        }
+
+    })
+</script>
