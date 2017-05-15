@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+A를 클릭시 B의 색이 하얗게 변한다 -> B를 클릭하면 B는 파란색으로 변한다. -> B를 다시 클릭하면 하얗게 변한다
+
+
+
+<div class="a">A</div>
+<div class="b">B</div>
+</body>
+<style>
+
+    .a{width:100px;height:100px;border:1px solid black;cursor: pointer;}
+    .b{width:100px;height:100px;border:1px solid black;cursor: pointer;}
+
+</style>
+<script>
+   var Change = (function(){
+
+    var A = document.querySelector('.a');
+    var B = document.querySelector('.b');
+    var c=1;
+    var ac = function() {
+        B.style.backgroundColor = 'yellow';
+    }
+    A.addEventListener('click',ac)
+    B.addEventListener('click', function bc() {
+        if(c===1){
+            ac();
+            c = 2;
+            return;
+        }
+        if(c===2){
+            B.style.backgroundColor = 'blue';
+            c = 1;
+        }
+    })
+   })();
+</script>
+</html>
