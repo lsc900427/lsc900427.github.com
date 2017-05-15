@@ -1,33 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+    <title>놀라운 이야기</title>
 </head>
 <body>
 <div id="app">
     <h1>todos</h1>
-    <input v-model="list">
+    <input v-model="list" @keyup.enter= "addTodo">
+    <ul>
+        <todo v-for="list in items" :list="list">{{list}}</todo>
+    </ul>
+    <pre>
+    {{$data}}
+    </pre>
 </div>
 </body>
 </html>
 
 <template id = "todo">
-    <todo></todo>
+    <ul>
+        <li @click="deleteTodo(list)">{{list}}</li>
+    </ul>
 </template>
 
 <script>
     Vue.component('todo',{
         template:'#todo',
+        props:['list'],
+        methods: {
+            deleteTodo(list) {
+                var index = parent.items.indexOf(list)
+                parent.items.splice(index,1)
+            }
+        }
     })
-
-    new Vue({
+//items란 배열에 item이 추가되어야 한다
+    //추가 된 것에서 하나씩 제거 해야 한다.
+   var parent = new Vue({
         el: "#app",
         data: {
-            list: "What needs to be done"
+            list: "What needs to be done",
+            items:[]
+        },
+        methods: {
+            addTodo() {
+
+                this.items.push(this.list)
+
+            },
+//            deleteTodo() {
+//                this.list
+//            }
         }
+
 
 
     })
 </script>
+<!--Add Todo - todo리스트에서 하나씩 추가-->
+<!--Delete Todo - 추가 된 것에서 하나씩 제거-->
+<!--Edit Todo - 클릭 두번시 수정 가능하게-->
+<!--Save Todo - 새로 고침해도 안사라지게-->
+<!--Cancel Edit - 다른 곳을 클릭시 사라지게 에딧창-->
+<!--Toggle todo - todo원을 클릭시 줄치기-->
+<!--Toggle all - 화살표 클릭시 모두 줄치기-->
+<!--Clear completed - 줄쳐진 리스트 지우기-->
+<!--Select filter - active일때-->
+                <!--줄쳐진애들사라지기-->
+                <!--completed일때-->
+                <!--줄안친애들안보이게-->
