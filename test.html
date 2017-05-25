@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>안녕하세요</h1>
+<a id="target" href="./demo1.html">ot</a>
 </body>
+<script>
+    //현재 웹페이지가 http://localhost/webjs/Element/attribute_api/demo3.html 일 때
+    var target = document.getElementById('target');
+    // http://localhost/webjs/Element/attribute_api/demo1.html
+    console.log('target.href', target.href);
+    // ./demo1.html
+    console.log('target.getAttribute("href")', target.getAttribute("href"));
+</script>
 </html>
