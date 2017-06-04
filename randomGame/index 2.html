@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <style>
+    section {
+        padding-top: 300px;
+        margin: auto;
+        width: 50%;
+        height: 300px;
+    }
+    div {
+        width: 100px; height: 50px;
+        border: 1px solid #111;
+        float: left;
+    }
+    input {
+
+    }
+    * {
+    }
+    button {
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div id="aa"><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+        <div><input type="text" size="8px"></div>
+    </section>
+    <audio id="myAudio">
+        <source src="final.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="backAudio">
+            <source src="sososo.mp4" type="audio/mpeg">
+            </audio>
+            <audio id="clickAudio">
+                <source src="click.mp3" type="audio/mpeg">
+                </audio>
+
+                <button id="start">START</button>
+            </body>
+
+            <script src="https://unpkg.com/vue"></script>
+
+            <script type="text/javascript">
+            var se;
+            var count = 0
+            var arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            window.onload = function(){
+                document.getElementById("clickAudio").play();
+            }
+
+            function timer(){
+                se = setInterval(function(){myFunction()}, 700)
+            }
+            function playAudio() {
+                var s = document.getElementById("myAudio");
+                s.play();
+                if(s.currentTime > 0){
+                    s.currentTime = 0;
+                }
+            }
+            function playAudio1() {
+                var ginjang = document.getElementById("myAudio");
+                ginjang.play();
+            }
+            function pauseAudio() {
+                var s = document.getElementById("clickAudio");
+                s.pause();
+            }
+
+            var start = document.getElementById('start');
+            function ran() {
+                var x = Math.floor((Math.random() * 20));
+                return x;
+            }
+            function check(arrs) {
+                return arrs > 0
+            }
+            function jae() {
+                pauseAudio()
+                document.getElementById("backAudio").play();
+                timer()
+            }
+            function stop() {
+                clearInterval(se);
+            }
+            var myFunction = function() {
+
+                var judge = arr.every(check)
+                var d = document.getElementsByTagName('div')
+                var i = ran();
+                d[i].style.background = "#811";
+                arr[i] = 1;
+                console.log(judge)
+                if (arr[arr.indexOf(i)] === 0) {
+                }
+                else if(judge){
+                    document.getElementById("backAudio").pause();
+                    document.getElementById("myAudio").play();
+                    clearInterval(se);
+                    alert('축하합니다^^')
+                }
+            }
+            start.addEventListener("click", jae);
+
+
+            </script>
+            </html>
