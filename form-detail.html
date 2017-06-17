@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JDC Design Studio</title>
+    <meta name="description" content="JDC Design Studio is a personal online portfolio, visual playground and testing ground of Jessie Daryl Cacafranca. Most of the showcased work are web, graphics, and photography." />
+    <meta name="keywords" content="Web Design, Graphic Design, Photography, Cebu, Philippines, Saudi Arabia, UX Designer, Digital Specialist, Social Media" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+<style>
+.center {
+    text-align: center;
+
+}
+.right {
+    text-align: right;
+
+}
+.left {
+    text-align: left;
+
+}
+.shape {
+    border: 1px solid black;
+    background-color: #eee;
+    margin: 20px 0px;
+}
+.borders {
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-color: #cccccc;
+}
+.margin_top {
+    margin-top:10px;
+}
+.margin-bottom {
+    margin-bottom:10px;
+}
+.center-block {
+    margin: 40px auto;
+
+}
+</style>
+<div class="container">
+    <form action="" class="formsc">
+        <div class="row shape">
+            <div class="col-sm-12">
+                <h4>
+                    <strong>고객정보</strong>
+                </h4>
+            </div>
+        </div>
+        <div class="detail__wrap borders">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="subject">회사명</label>
+                    <input class="form-control" type="text" name="subject" />
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="name">담당자</label>
+                    <input class="form-control" type="text" name="name" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>연락처</label>
+                    <input type="text" class="form-control" name="address" />
+                </div>
+                <div class="col-md-6">
+                    <label>이메일</label>
+                    <input type="text" maxlength="100" name="email" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+
+            <div class="row shape">
+                <div class="col-sm-12">
+                    <h4>
+                        <strong>원하는 홈페이지</strong>
+                    </h4>
+                </div>
+            </div>
+            <div class="detail__wrap borders">
+                <div class="row">
+
+                    <div class="col-xs-6 center margin-bottom">
+                        <input type="radio" id="new" name="options" value="new"  >
+                        <label for="new">신규</label>
+                    </div>
+                    <div class="col-xs-6 center margin-bottom">
+                        <input type="radio" id="renewal" name="options" value="renewal"  >
+                        <label for="renewal">리뉴얼</label>
+                    </div>
+
+
+                    <div class="col-xs-4 left">
+                        <input type="checkbox" id="homepage" name="homepage" value="homepage" >
+                        <label for="homepage">홈페이지</label>
+                    </div>
+                    <div class="col-xs-4 center">
+                        <input type="checkbox" id="shopping" name="shopping" value="shopping" >
+                        <label for="shopping">쇼핑몰</label>
+                    </div>
+                    <div class="col-xs-4 right">
+                        <input type="checkbox" id="res" name="res" value="res" >
+                        <label for="res">반응형 웹</label>
+                    </div>
+                    <div class="col-xs-4 left">
+                        <input type="checkbox" id="mobile" name="mobile" value="mobile" >
+                        <label for="mobile">모바일 웹</label>
+                    </div>
+                    <div class="col-xs-4 center">
+                        <input type="checkbox" id="hosting" name="hosting" value="hosting" >
+                        <label for="hosting">웹호스팅</label>
+                    </div>
+                    <div class="col-xs-4 right">
+                        <input type="checkbox" id="manage" name="manage" value="manage" >
+                        <label for="manage">유지보수</label>
+                    </div>
+                </div>
+
+
+                <div class="row margin_top">
+                    <div class="col-md-6">
+                        <label>예상페이지</label>
+                        <input type="text" name="page_number" placeholder="페이지수" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>예산</label>
+                        <input type="text" name="budget" placeholder="만원" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div class="row shape">
+            <div class="col-sm-12">
+                <h4>
+                    <strong>운영 및 참고 홈페이지</strong>
+                </h4>
+            </div>
+        </div>
+
+        <div class="detail__wrap borders">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>현재 운영중인 홈페이지</label>
+                    <input type="text"  name="current"   class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label>참고 홈페이지 01</label>
+                    <input type="text" name="benchmarking_1"  class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label>참고 홈페이지 02</label>
+                    <input type="text" name="benchmarking_2" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row shape">
+            <div class="col-sm-12">
+                <h4>
+                    <strong>상세 요구사항</strong>
+                </h4>
+            </div>
+        </div>
+        <div class="detail__wrap borders">
+            <div class="row">
+                <div class="col-sm-12">
+                    <textarea id="content" name="content" class="form-control"required placeholder="요구사항" rows="8"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn-lg btn-default center-block">견적문의</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div id="time"></div>
+<script>
+
+    $(document).ready(function() {
+
+        $('.center-block').click(function (e) {
+            e.preventDefault();
+            var serializedData = $('.formsc').serialize();
+            console.log(serializedData);
+            $.ajax({
+                url: './pdo.php',
+                type: 'post',
+                data: serializedData,
+                success: function (response) {
+                    alert('전송완료')
+                    $('#time').html(response);
+                }
+            })
+        })
+    });
+//            axios.post('https://mj-form.firebaseio.com/data.json', inputs)
+//                .then(function (response) {
+//                    console.log(response)
+//                    alert('전송이 완료되었습니다');
+//                })
+//                .catch(function (error) {
+//                    console.log(error);
+//                });
+
+
+//    var all = {
+//        "id" : METHOD.id.value,
+//        "email" : METHOD.email.value,
+//        "subject" : METHOD.subject.value,
+//        "message" : METHOD.message.value
+//    }
+//     var allda = METHOD.form.serialize()
+//                 axios.post('./js/pdo.php', all)
+//                     .then(function (response) {
+//                         console.log(response)
+//                         alert('전송이 완료되었습니다');
+//                     })
+//                     .catch(function (error) {
+//                         console.log(error);
+//                     });
+</script>
+
+
+
+</body>

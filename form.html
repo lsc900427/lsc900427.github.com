@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<!-- <form name="signform" method="post" id="formInput"  ENCTYPE="multipart/form-data"> -->
+<style>
+    .detail__form {
+
+    }
+</style>
+<div class="container">
+    <form name="signform" method="post" action="estimate_010100_ok.php" class="detail__form" onsubmit="return frmCheck_new('title,uname1,utel');"  ENCTYPE="multipart/form-data">
+        <input type="hidden" name="formmode" value="save">
+        <input type="hidden" name="conf" value=""><!-- 환경설정파일  -->
+        <input type="hidden" name="moveurl" value="estimate_010100_ok.php">
+        <input type="hidden" name="moveurl_1" value="estimate_010100.html">
+        <div class="sub_con portfolio_01">
+            <div class="form_width">
+                <div>
+                    <h4 class="tit_cyan text_center">고객정보</h4>
+                    <table class="table-respon form-01 border_no">
+                        <colgroup>
+                            <col class="w_130">
+                            <col style="width:auto;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>
+                                회사명
+                            </th>
+                            <td>
+                                <input type="text" name="title" id="title" title='회사명' maxlength="200"  class="input_for">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                담당자명
+                            </th>
+                            <td>
+                                <input type="text" name="uname1" id="uname1" title='담당자 성명'  class="input_for">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                휴대전화번호
+                            </th>
+                            <td>
+                                <div class="input_btn_box clearfix">
+                                    <input type="text" name="utel" id="utel" title='휴대전화번호' placeholder="숫자만입력" class="input_for" onKeyUp="if(isNaN(this.value)) {alert('숫자만 입력해 주세요.');this.value=''};">
+                                    <!-- <a href="#" class="table-btn-01 ">인증하기</a> -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                이메일
+                            </th>
+                            <td>
+                                <div class="e_mail_box">
+                                    <span class="mail_txt"><input type="text" name="uemail1" id="uemail1" title="이메일"  class="input_for"></span>
+                                    <span class="mail_a">@</span>
+                                    <span class="mail_txt2"><input type="text" id="uemail2"  name="uemail2" title="이메일" class="input_for" placeholder="직접입력"></span>
+                                    <span class="mail_sel">
+					<select name="uemail3" onChange="changeEmail(this.value)"  class="sel_for">
+						<option value="" selected>이메일선택</option>
+													<option value="naver.com">naver.com</option>
+													<option value="dreamwiz.com">dreamwiz.com</option>
+													<option value="empal.com">empal.com</option>
+													<option value="hanmir.com">hanmir.com</option>
+													<option value="hanafos.com">hanafos.com</option>
+													<option value="hotmail.com">hotmail.com</option>
+													<option value="lycos.co.kr">lycos.co.kr</option>
+													<option value="nate.com">nate.com</option>
+													<option value="paran.com">paran.com</option>
+													<option value="netian.com">netian.com</option>
+													<option value="yahoo.co.kr">yahoo.co.kr</option>
+													<option value="kornet.net">kornet.net</option>
+													<option value="nownuri.net">nownuri.net</option>
+													<option value="unitel.co.kr">unitel.co.kr</option>
+													<option value="freechal.com">freechal.com</option>
+													<option value="korea.com">korea.com</option>
+													<option value="orgio.net">orgio.net</option>
+													<option value="chollian.net">chollian.net</option>
+													<option value="hitel.net">hitel.net</option>
+
+						<option value="1">직접입력</option>
+					</select>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                알게된 경로
+                            </th>
+                            <td>
+                                <input name="info1" id="info1" title='알게된 경로' type="radio" class="FORM2" value="다음"><label for="info10" class="mr_20">다음</label>
+                                <input name="info1" id="info1" title='알게된 경로' type="radio" class="FORM2" value="네이버"><label for="info10" class="mr_20">네이버</label>
+                                <!--20161109 항목 추가 khr-->
+                                <input name="info1" id="info1" title='알게된 경로' type="radio" class="" value="구글"><label for="info10" class="mr_20">구글</label>
+                                <!--20161109 항목 추가 khr //-->
+                                <span class="m_block">
+						<input name="info1" id="info1" title='알게된 경로' type="radio" class="FORM2" value="기타"><label for="info10" class="mr_20">기타</label>
+					<input name="info1" id="info1" title='알게된 경로' type="radio" class="FORM2" value="배너광고"><label for="info10" class="mr_20">배너광고</label>
+					</span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                접속지역
+                            </th>
+                            <td>
+                                <input type="text" id="info2" name="info2" class="input_for">
+                                <div class="mt_10 font_13 gray_05">
+                                    간단한 위치를 등록해주시면 미팅시 쉽게 찾아 갈 수 있습니다. (예 : 서울시 강남구 삼성동)
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="part_mt">
+                    <h4 class="tit_cyan text_center">의뢰정보</h4>
+                    <table class="table-respon form-01">
+                        <colgroup>
+                            <col class="w_130">
+                            <col style="width:auto;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>
+                                제작구분
+                            </th>
+                            <td>
+                                <input type="radio" name="title1" id="radio" value="신규" checked>
+                                <label for="info11" class="mr_20">신규</label>
+                                <input type="radio" name="title1" id="radio2" value="리뉴얼">
+                                <label for="info11" class="mr_20">리뉴얼</label>
+                                <input type="radio" name="title1" id="radio3" value="기타">
+                                <label for="info11" class="mr_20">기타</label>
+                            </td>
+                        </tr>
+                        <tr class="type_tr">
+                            <th>
+                                제작유형
+                            </th>
+                            <td>
+                                <div>
+
+                                    <div class="tit bold gray_01">
+                                        홈페이지
+                                    </div>
+                                    <div class="mt_05 des">
+                                        <input type="checkbox" name="title2_1" id="checkbox2"  value="홈페이지-보급형">
+                                        <label for="info14" class="mr_10">보급형</label>
+                                        <input type="checkbox" name="title2_2" id="checkbox3" value="홈페이지-중급형">
+                                        <label for="info14" class="mr_10">중급형</label>
+                                        <input type="checkbox" name="title2_3" id="checkbox4" value="홈페이지-고급형">
+                                        <label for="info14" class="mr_10">고급형</label>
+                                        <input type="checkbox" name="title2_4" id="checkbox5" value="홈페이지-기획형">
+                                        <label for="info14" class="mr_10">기획형</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="tit bold gray_01 mt_10">
+                                        쇼핑몰
+                                    </div>
+                                    <div class="mt_05 des">
+                                        <input type="checkbox" name="title2_6" id="checkbox8"  value="쇼핑몰-보급형">
+                                        <label for="info18" class="mr_10">보급형</label>
+                                        <input type="checkbox" name="title2_7" id="checkbox7"  value="쇼핑몰-중급형">
+                                        <label for="info18" class="mr_10">중급형</label>
+                                        <input type="checkbox" name="title2_8" id="checkbox6"  value="쇼핑몰-고급형">
+                                        <label for="info18" class="mr_10">고급형</label>
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <div class="tit bold gray_01 mt_10">
+                                        모바일
+                                    </div>
+                                    <div class="mt_05 des">
+                                        <input type="checkbox" name="title2_9" id="checkbox9"  value="모바일-보급형">
+                                        <label for="info21" class="mr_10">보급형</label>
+                                        <input type="checkbox" name="title2_10" id="checkbox10" value="모바일-중급형">
+                                        <label for="info21" class="mr_10">중급형</label>
+                                        <input type="checkbox" name="title2_11" id="checkbox11"  value="모바일-고급형">
+                                        <label for="info21" class="mr_10">고급형</label>
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                예상금액
+                            </th>
+                            <td>
+                                <select name="title3" class="sel_for">
+                                    <option value="">선택해주세요.</option>
+                                    <option value="100~500만원">100~500만원</option>
+                                    <option value="500~1,000만원">500~1,000만원</option>
+                                    <option value="1,000~3,000만원">1,000~3,000만원</option>
+                                    <option value="3,000만원 이상">3,000만원 이상</option>
+                                    <option value="미정">미정</option>
+                                </select>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                참고사이트1
+                            </th>
+                            <td>
+                                <input name="title4" type="text" class="input_for" id="textfield5" placeholder="http://">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                참고사이트2
+                            </th>
+                            <td>
+                                <input name="title5"  type="text"  placeholder="http://" class="input_for" size="50">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                문의사항
+                            </th>
+                            <td>
+                                <textarea  name="content" class="area-type-form"></textarea>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="btn_box">
+                        <!-- <a href="javascript:;" id="btn-submit" >신청하기</a> -->
+                        <a href="javascript:;" onClick="frmCheck_new('title,uname1,utel');" class="btn_success">신청하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+<!--dsad-->
+
+
+<!--sadsa-->
+<script>
+
+    $(document).ready(function() {
+        //접수
+        $('#btn-submit').click(function(e){
+            e.preventDefault();	//href 안보내기
+            var THISCHCK = "title,uname1,utel";
+            if(frmCheck( THISCHCK )==true){
+
+
+                $.ajax({
+                    type : "POST"
+                    , url : "/freeweb/Bboard/online_test_ok.php"
+                    , dataType : "json"
+                    , data : $("#formInput").serialize()
+                    , success : function(res){
+                        //alert(res.code);
+                        //alert (res.msg);
+                        if(res.code!=0){
+                            //폼값 비우기
+                            $("form").each(function() {
+                                if(this.id == "formInput") this.reset();
+                            });
+                            //성공이면 실행
+                            $('#pop_success').modal('show');
+                        }else{
+                            alert('실패하였습니다.');
+                        }
+                    }
+                }); //$.ajax({
+
+            }else{
+                return false;
+            }
+
+        });
+
+
+    });
+    goog_report_conversion
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    goog_snippet_vars = function() {
+        var w = window;
+        w.google_conversion_id = 1012473579;
+        w.google_conversion_label = "OqY7CN3O3wcQ673k4gM";
+        w.google_conversion_value = 1.00;
+        w.google_conversion_currency = "KRW";
+        w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function(url) {
+        goog_snippet_vars();
+        window.google_conversion_format = "3";
+        var opt = new Object();
+        opt.onload_callback = function() {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        }
+        var conv_handler = window['google_trackConversion'];
+        if (typeof(conv_handler) == 'function') {
+            conv_handler(opt);
+        }
+    }
+    /* ]]> */
+</script>
+
+</script>
+</body>
+</html>

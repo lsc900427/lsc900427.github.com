@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+<div class="lsc">
+    <li class="say">1</li>
+    <li class="say">2</li>
+    <li class="say">3</li>
+    <li class="say">4</li>
+    <li class="say">5</li>
+</div>
+
+
+</body>
+<script>
+    var box = [];
+
+   function ajax() {
+       var lsc = document.querySelector('.lsc');
+        axios.get('http://localhost:2403/todos/')
+            .then(function(response) {
+                console.log(response.data);
+                box = response.data;
+                var boxes = box.map(function(v){
+                    return v.text;
+                    });
+             for(var i = 0; i < 5; i++) {
+                 document.getElementsByTagName('li')[i].innerText = boxes[i]
+             }
+    });
+   }
+    ajax();
+</script>
+</html>

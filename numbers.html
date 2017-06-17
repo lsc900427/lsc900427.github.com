@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="num"></div>
+</body>
+<script>
+    var dom = document.getElementById('num');
+    var max = 100;
+    var speed = 100;
+    var num = 1;
+    function numberChange(dom, max, speed) {
+
+        function number(dom, num) {
+            dom.innerText = num
+            var ab = dom.innerText
+        }
+
+        var nums = setInterval(function(){
+
+        if(max === +(dom.innerText)) {
+            return clearInterval(nums)
+        }
+
+            number(dom, 2 + +dom.innerText)
+
+        }, speed)
+
+    }
+
+//
+    numberChange(dom, 100, speed)
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--var dom = document.getElementById('num'); // 어떤 dom의 내용이 변할지-->
+<!--var MAX = 100; // 최대 몇까지 증가할지-->
+<!--var MS = 100; // 몇 ms 마다 숫자가 변할지,-->
+
+<!--// 요 changeNumAni란 부분을 모듈화 시켜서 잘 쓰면 된다.-->
+<!--var changeNumAni = function(dom, max, ms) {-->
+<!--// dom 안에 있는 텍스트를 입력받은 숫자로 갈아치우는 함수.-->
+<!--var changeNum = function(dom, num) {-->
+<!--dom.innerText = num;-->
+<!--};-->
+
+<!--// 입력받은 ms마다 실행할 함수.-->
+<!--// max에 도달하면 타이머를 종료시켜야하므로 타이머 함수를 변수에 담아야함.-->
+<!--var idSetInterval = setInterval(function() {-->
+<!--if(+(dom.innerText) === max) { // 입력받은 max와 같아지는 순간 더 이상 콜백 함수를 실행하면 안 됨.-->
+<!--return clearInterval(idSetInterval); // 타이머 자기 자신을 종료하면서 함수도 종료.-->
+<!--}-->
+<!--// 유동적으로 바뀌는 숫자는 dom에 접근해야한다.-->
+<!--changeNum(dom, 1+(+dom.innerText));-->
+<!--}, ms);-->
+<!--};-->
+
+<!--// 실제 함수를 실행하는 부분-->
+<!--changeNumAni(dom, MAX, MS);-->

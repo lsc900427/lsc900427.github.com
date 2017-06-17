@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="pure-min.css">
+    <link rel="stylesheet" href="grids-responsive-min.css">
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>:::공사중입니당~!:::</title>
+</head>
+
+<body>
+
+<form class="form_section_2 pure-u-1 pure-u-md-1-2">
+    <h1>문의</h1>
+    <div class="pure-form f_name">
+        <label for="Name">Name</label>
+        <input type="text" id="name" class="pure-input-1-2" v-model = "contents.name">
+        <div v-if="contents.attemptname" @click ="missingName" :style="warning" >!!이름을 적어주세요.</div>
+    </div>
+
+    <div class="pure-form f_email">
+        <label for="E-mail">E-mail</label>
+        <input type="email"
+               id="email"
+               class="pure-input-1-2"
+               v-model = "contents.email" requried style="ime-mode:disabled"
+               @keyup="engs"
+        >
+        <div v-if="contents.attemptSubmit" @click ="missingEmail" :style="warning">!!정확한 이메일 주소를 적어주세요.</div>
+    </div>
+
+
+    <div class="pure-form f_message">
+        <label for="message">Message</label><br>
+        <textarea id="message" rows="5" class="pure-input-2-3" v-model="contents.message"></textarea>
+    </div>
+
+
+    <div class="submit1">
+        <button  @click.prevent="submit">
+            Submit
+        </button>
+    </div>
+
+    <div>
+
+        <button @click.prevent="getdata">Get</button>
+        <p>{{this.getdatas}}</p>
+    </div>
+    <button @click.prevent = "missingEmail()">
+        prac
+    </button>
+    <button @click.prevent = "missingName()">
+        naem
+    </button>
+    <pre>
+      {{$data}}
+    </pre>
+</form>
+
+<!-- <p>
+한글이름 : <input type="text" name="kName" style="ime-mode:active;" onkeyup="han(this)"> <br/>
+영어이름 : <input type="text"  style="ime-mode:inactive;" onkeyup="eng(this)"> <br/>
+</p> -->
+
+<!-- <script type="text/javascript">
+
+function han(obj) {
+var pattern = /[^(ㄱ-힣)]/; //한글만 허용 할때
+if (pattern.test(obj.value)) {
+alert("한글만 허용합니다.");
+obj.value = '';
+obj.focus();
+return false;
+}
+}
+function eng(obj) {
+var pattern = /[^(a-zA-Z0-9)]/; //영문만 허용
+if (pattern.test(contents.email)) {
+alert("영문만 허용합니다.");
+contents.email = '';
+contents.email.focus();
+return false;
+}
+}
+function all(obj) {
+var pattern = /[^(ㄱ-힣a-zA-Z0-9)]/; //한글,영문,숫자만 허용
+if (pattern.test(document.getElementById('name').value)) {
+alert("한글,영문,숫자만 허용합니다.");
+obj.value = '';
+obj.focus();
+return false;
+}
+}
+</script> -->
+
+
+
+<script>
+    var mjform = new Vue({
+        el:'.form_section_2',
+        data: function(){
+            return {
+                contents: {
+                    name: '',
+                    email: '',
+                    message:'',
+                    attemptSubmit: false,
+                    attemptname: false,
+
+
+                },
+                warning:{
+                    color:'red',
+                    fontSize:'12px',
+                    fontWeight:'bold'
+                },
+                getdatas: [],
+
+            }
+        },
+        computed:{
+            engs: function() {
+                // var pattern=[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$
+                var pattern = /[^(a-zA-Z0-9@)]+\./; //영문만 허용
+                if (pattern.test(this.contents.email)) {
+                    alert('email은 한글과 영어만 가능합니다.')
+                    this.contents.email = '';
+                    return false;
+                }
+            }
+        },
+        methods: {
+            submit: function() {
+                this.missingEmail();
+                this.missingName();
+                if(this.contents.attemptSubmit===false && this.contents.attemptname===false) {
+                    this.$http.post('https://mj-form.firebaseio.com/data.json', this.contents)
+                        .then(function(response){
+                            console.log(this.contents)
+                            alert('전송이 완료되었습니다.')
+                        }), function(error){
+                        alert('전송이 실패하였습니다.')
+                    }
+                }
+            },
+
+            missingEmail: function() {
+
+                var query = '@'
+                return this.contents.attemptSubmit = !(this.contents.email.includes(query)&&this.contents.email.includes('.'))
+                console.log(query)
+            },
+            missingName: function() {
+                if(this.contents.name === ''){
+                    this.contents.attemptname = true
+                }else{
+                    this.contents.attemptname = false
+                }
+            },
+            getdata: function() {
+                this.$http({url:'https://mj-form.firebaseio.com/data.json', method: 'GET'})
+                    .then(function(response) {
+                        mjform.getdatas = response.data
+                    })
+            },
+        }
+    })
+</script>
+
+</body>
+</html>

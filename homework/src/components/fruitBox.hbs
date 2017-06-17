@@ -1,0 +1,17 @@
+
+<table>
+    <tbody>
+    <tr>
+        <td>과일이름</td>
+        <td>가격</td>
+        <td>수량</td>
+    </tr>
+    {{#each fruit}}
+    <tr>
+        <th>{{this.name}}</th>
+        <th>{{this.price}}</th>
+        <th>{{this.quantity}}</th>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
