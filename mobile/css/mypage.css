@@ -1,0 +1,52 @@
+body {
+    background-color: papayawhip;
+}
+.header_menu_center {
+    text-align: center;
+}
+.header_menu {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.fa-location-arrow {
+    margin-right:10px;
+}
+.location-bar_right {
+    text-align: right;
+}
+.location-bar__image {
+    margin-top:10px;
+}
+.recent-search {
+    margin-top: 15px;
+}
+.search-text p {
+    margin-bottom: 10px;
+}
+
+
+.footer li {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 5px;
+
+}
+.footer li i {
+    font-size: 2em;
+    margin-bottom:2px;
+}
+.footer li p {
+    font-size: 1rem;
+}
+
+.footer {
+
+}
+
+
+
+
+
+.dropdown-menu {
+    min-width: 500px !important;
+}

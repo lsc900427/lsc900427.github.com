@@ -1,0 +1,54 @@
+body {
+    background-color: papayawhip;
+}
+.header_menu_center {
+    text-align: center;
+}
+.header_menu {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.fa-location-arrow {
+    margin-right:10px;
+}
+.location-bar_right {
+    text-align: right;
+}
+.location-bar__image {
+    margin-top:10px;
+}
+.recent-search {
+    margin-top: 15px;
+}
+
+.footer li {
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 5px;
+
+}
+.footer li i {
+    font-size: 2em;
+    margin-bottom:2px;
+}
+.footer li p {
+    font-size: 1rem;
+}
+
+.footer {
+
+}
+
+
+/*다른점*/
+
+.recent-search__btn-1 {
+    width: 100%;
+    margin-top: 20px;
+    color: #357ae8;
+}
+.recent-search__btn-2 {
+    width: 100%;
+    margin-top: 20px;
+    color: #e30000;
+}
