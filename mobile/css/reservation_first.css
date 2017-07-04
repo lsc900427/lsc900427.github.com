@@ -1,5 +1,6 @@
 body {
-    background-color: papayawhip;
+    background-color: #222;
+    color: #fff;
 }
 .header_menu_center {
     text-align: center;
@@ -7,6 +8,11 @@ body {
 .header_menu {
     margin-bottom: 15px;
     margin-top: 15px;
+}
+.header_left {
+    padding-right: 0 !important;
+    padding-left: 7px !important;
+
 }
 .fa-location-arrow {
     margin-right:10px;
@@ -37,6 +43,34 @@ body {
 
 .footer {
 
+}
+/* 별점먹이기 */
+.star {
+    font-size: 2.5em;
+    letter-spacing: -3.5px;
+}
+.star > a {
+    color:#ccc;
+}
+.star > .plus {
+    color: red;
+}
+.location-bar__text {
+    margin-top: 7px;
+}
+
+
+/* appeal */
+.appeal {
+    margin-top: 5px;
+}
+.appeal > li {
+    color: #000;
+    display: inline;
+    padding: 5px;
+    background: #ddd;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 
 

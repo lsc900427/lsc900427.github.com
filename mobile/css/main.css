@@ -1,5 +1,6 @@
 body {
-    background-color: papayawhip;
+    background-color: #222;
+    color: #fff;
 }
 .header_menu_center {
     text-align: center;
@@ -8,6 +9,13 @@ body {
     margin-bottom: 15px;
     margin-top: 15px;
 }
+.header_left {
+    padding-right: 0 !important;
+    padding-left: 7px !important;
+
+}
+
+
 .fa-location-arrow {
     margin-right:10px;
 }
@@ -43,10 +51,16 @@ body {
 
 }
 
+.load {
+    text-align: center !important;
+    margin-top: 55%;
+}
 
-
+.loading-logo {
+    width: 40%;
+}
 
 
 .dropdown-menu {
-    min-width: 500px !important;
+
 }

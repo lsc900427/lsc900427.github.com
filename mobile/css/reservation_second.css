@@ -1,5 +1,6 @@
 body {
-    background-color: papayawhip;
+    background-color: #222;
+    color: #fff;
 }
 .header_menu_center {
     text-align: center;
@@ -7,6 +8,11 @@ body {
 .header_menu {
     margin-bottom: 15px;
     margin-top: 15px;
+}
+.header_left {
+    padding-right: 0 !important;
+    padding-left: 7px !important;
+
 }
 .fa-location-arrow {
     margin-right:10px;
@@ -77,4 +83,7 @@ body {
 .btn__size{
     width: 100%;
     margin:0 auto;
+}
+.fc-unthemed td.fc-today {
+    background : indianred !important;
 }

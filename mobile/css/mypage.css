@@ -1,45 +1,43 @@
 body {
-    background-color: papayawhip;
+    background-color: #222;
+    color: #fff;
 }
-.header_menu_center {
-    text-align: center;
+.wapper {
+  width: 100%;
 }
-.header_menu {
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-.fa-location-arrow {
-    margin-right:10px;
-}
-.location-bar_right {
-    text-align: right;
-}
-.location-bar__image {
-    margin-top:10px;
-}
-.recent-search {
-    margin-top: 15px;
-}
-.search-text p {
-    margin-bottom: 10px;
+.container-fluid {
+  padding: 0 !important
 }
 
 
-.footer li {
-    text-align: center;
-    margin-top: 40px;
-    padding-bottom: 5px;
+
+
+
+.header {
+  width: 100%;
+  height: 40%;
+}
+.header__text {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  text-align: center;
+}
+.header__text > a {
+  position: absolute;
+  display: block;
+  left: 5%;
+  top: 25%;
 
 }
-.footer li i {
-    font-size: 2em;
-    margin-bottom:2px;
+.header__text > span {
+  color: #fff;
+  position: absolute;
+  margin-top: 27px;
+  left: 38%;
+  font-size: 1.2em;
 }
-.footer li p {
-    font-size: 1rem;
-}
-
-.footer {
+.header__img > img {
 
 }
 
@@ -47,6 +45,119 @@ body {
 
 
 
-.dropdown-menu {
-    min-width: 500px !important;
+
+.profile {
+  width: 250px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 180px;
+  left: 0;
+  right: 0;
+}
+@media (max-width: 320px) {
+  .profile {
+    top: 160px;
+  }
+}
+@media (min-width: 380px) {
+  .profile {
+    top: 220px;
+  }
+}
+
+.people {
+  float: left;
+}
+.people > input {
+  position: absolute;
+  z-index: 333;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+}
+#holder_people {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #ccc;
+  border: 3px solid #fff;
+  box-sizing: content-box;
+}
+#holder_people > img {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+.pet {
+  float: right;
+}
+.pet > input {
+  position: absolute;
+  z-index: 333;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+}
+#holder_pet {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #ccc;
+  border: 3px solid #fff;
+  box-sizing: content-box;
+}
+#holder_pet > img {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+.card {
+  margin-top: 100px;
+  padding: 0 50px 0 50px;
+}
+
+.card > button {
+  width: 100%;
+}
+
+
+
+
+
+
+.management {
+  padding-left: 5%;
+  padding-bottom: 10%;
+}
+.management > ul {
+  padding-top: 25px;
+}
+
+.management > ul > li {
+  padding-top: 15px;
+}
+.subject {
+  font-size: 1.2em;
+  color: #aaa;
+}
+.subtitle {
+  padding-left: 10%;
+}
+.subtitle > span{
+  width: 100px;
+  display: inline-block;
+}
+.subtitle > i {
+  padding-left: 10px;
+  font-size: 1.2em;
 }

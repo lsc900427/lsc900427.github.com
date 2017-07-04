@@ -4,22 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MJ PET</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/dbf98e1f6f.js"></script>
+    <script src="./js/main.js"></script>
     <link rel=stylesheet href="./css/reset.css">
     <link rel=stylesheet href="./css/main.css">
 </head>
+
+<script>
+  function hi() {
+      document.querySelector('.wapper').style.display = "none";
+      console.log(document.querySelector('.wapper').style.display);
+  }
+</script>
+
 <body>
+
+  <div class="load container-fluid">
+    <img class="loading-logo" src="./images/mjcorp.gif" alt="">
+  </div>
+
+
   <div class="wapper container-fluid">
     <div class="header">
-      <div class="header_menu row">
-        <div class="col-xs-2 dropdown">
-          <button type="button" class="btn btn-default" id="dLabel"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+      <div class="header_menu row dropdown">
+        <div class="col-xs-2 ">
+          <button type="button" class="btn btn-default btn-click">
             <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
           </button>
+        </div>
+
+        <div class="col-xs-8 header_menu_center">
+          <img src="./images/favi.png"  style = "width : 3em; display = inline;vertical-align:middle;" alt="">
+          <span class="whitecolor"style="font-size: 1.5em;vertical-align:middle;">PET<span class="redcolor" style = "color :red;">BEAUTY<span></span>
+        </div>
+        <div class="col-xs-2 header_left">
+          <button type="button" class="btn btn-default ">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="col-xs-12">
           <ul class="dropdown-menu" role="menu" style="width : 100%;" aria-labelledby="dLabel">
             <li>1번</li>
             <li>2번</li>
@@ -31,16 +58,11 @@
             <li>4번</li>
           </ul>
         </div>
-        <div class="col-xs-8 header_menu_center">
-          <img src="./images/favi.png"  style = "width : 2.5em; display = inline;" alt=""><span>PET BEAUTY</span>
-        </div>
-        <div class="col-xs-2">
-          <button type="button" class="btn btn-default">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </div>
       </div>
     </div>
+    <script>
+      $('.btn-click').click(function() {$('.dropdown-menu').toggle()})
+    </script>
     <!--헤더 메인메뉴 끝-->
 
     <div class="location-bar row">
@@ -94,10 +116,12 @@
       </li>
     </ul>
   </div>
-
-
-
-
-
 </body>
+
+<script>
+  window.onload = setTimeout(function() {
+      document.querySelector('.load').style.display = "none";
+      document.querySelector('.wapper').style.display = "block";
+  }, 5000);
+</script>
 </html>

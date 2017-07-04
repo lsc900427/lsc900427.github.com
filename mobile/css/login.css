@@ -1,0 +1,43 @@
+body {
+    background-color: #222;
+    color: #fff;
+}
+span {
+  color: #fff;
+}
+.wapper {
+  padding-top: 100px;
+}
+.whitecolor {
+  color: white;
+}
+.redcolor {
+  color: red;
+}
+.header {
+  height: 70px;
+}
+
+.header_menu_center {
+  text-align: center;
+}
+
+
+.border {
+  background: #2f2f2f;
+  border: 3px solid #fff;
+  padding: 20px 30px 10px 30px;
+}
+.checkbox {
+ float: right;
+}
+.sign_in > div > button {
+  width: 100%;
+}
+.sign_btn {
+  background: #aaa;
+}
+.find_id > span {
+  float: right;
+  text-decoration: underline;
+}
